@@ -1,0 +1,12 @@
+# default config.yml
+pending: You have some pending reports. Write /check for more info.
+done: No pending reports. Well done ;D
+thanks: Thanks for your report :D
+send_notif: A report has been sent. Type /check (n) for more info.
+no_reports: There aren't any active report!
+end_list: I won't show you more reports
+no_perms: You havn't permission to do that :(
+delete: Report succesfully deleted
+not_found: Report not found :(
+secs: 5
+Reportes:

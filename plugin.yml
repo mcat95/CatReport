@@ -1,0 +1,20 @@
+name: CatReport
+main: com.github.mcat95.CatReport.CatReport
+version: Beta
+commands:
+  report:
+    description: Report something
+    usage: /<command> mensaje
+  check:
+    description: Check the reports
+    usage: /<command>
+  delete:
+    description: Delete a report
+    usage: /<command> id
+  go:
+    description: Go to the location of a report
+    usage: /<command> id
+  test:
+    description: Test
+    usage: /<command>
+  
