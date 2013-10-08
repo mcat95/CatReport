@@ -63,6 +63,7 @@ public class CatReport extends JavaPlugin implements Listener {
 		}
 		return glued;
 		}
+	//TEST2
 	public boolean onCommand(CommandSender sender, Command cmd, String label, String[] args){
 		if(cmd.getName().equalsIgnoreCase("test")){
 			sender.sendMessage("test");
