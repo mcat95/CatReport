@@ -21,21 +21,24 @@ public class CatReport extends JavaPlugin implements Listener {
 	public List<String> Strings;
 	public void onEnable() {
 		this.saveDefaultConfig();
-		//Registro de Eventos
+		//Event Handling
 		getServer().getPluginManager().registerEvents(this, this);
 		this.getLogger().info("CatReport is working ;D");
+		//Stats
 		try {
 		    Metrics metrics = new Metrics(this);
 		    metrics.start();
 		    this.getLogger().info("Stats sent");
 		} catch (IOException e) {		   
 		}
+		//Get report list
 		Strings = this.getConfig().getStringList("Reportes");
 	}
 	
 	@EventHandler	
 	public void playerLogin(final PlayerJoinEvent event) {
 		int secs = this.getConfig().getInt("secs");
+		//Scheduled message on login
 		if(event.getPlayer().hasPermission("Catreport.op")){
 			Bukkit.getScheduler().scheduleSyncDelayedTask(this, new Runnable(){
 				@Override
@@ -55,6 +58,7 @@ public class CatReport extends JavaPlugin implements Listener {
 		return this.getConfig().getString(string);
 	}
 	public static String pegar(String[] array, String glue) {
+		//Join the args as message
 		String glued = "";
 		for(int i = 0; i < array.length;i++) {
 		glued += array[i];
@@ -63,11 +67,8 @@ public class CatReport extends JavaPlugin implements Listener {
 		}
 		return glued;
 		}
-	//TEST2
+	
 	public boolean onCommand(CommandSender sender, Command cmd, String label, String[] args){
-		if(cmd.getName().equalsIgnoreCase("test")){
-			sender.sendMessage("test");
-		}
 		if(cmd.getName().equalsIgnoreCase("report")){
 			if(args.length>0 & sender instanceof Player){
 				String cadena = pegar(args, " ");
